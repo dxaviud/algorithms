@@ -20,27 +20,27 @@ public class MergeSort {
   public static void mergeSort(int[] a) {
     if (a.length <= 1)
       return;
-    sort(a, 0, (a.length - 1) / 2, a.length - 1);
+    int[] aux = new int[a.length];
+    sort(a, aux, 0, (a.length - 1) / 2, a.length - 1);
   }
 
-  private static void sort(int[] a, int low, int mid, int high) {
+  private static void sort(int[] a, int[] aux, int low, int mid, int high) {
     //System.out.println("sort called, low: " + low + " high: " + high);
     if (low >= high)
       return; // base case?
-    sort(a, low, (low + mid) / 2, mid);
-    sort(a, mid + 1, (mid + 1 + high) / 2, high);
-    merge(a, low, mid, high);
+    sort(a, aux, low, (low + mid) / 2, mid);
+    sort(a, aux, mid + 1, (mid + 1 + high) / 2, high);
+    merge(a, aux, low, mid, high);
   }
 
-  private static void merge(int[] a, int low, int mid, int high) {
+  private static void merge(int[] a, int[] aux, int low, int mid, int high) {
     //System.out.println("{");
     //System.out.println("merge called, low: " + low + " high: " + high);
-    int[] aux = new int[high + 1];
     for (int i = low; i < high + 1; i++) {
       aux[i] = a[i];
     }
-    //System.out.print("auxilliary array: ");
-    //printA(aux);
+    // System.out.print("auxilliary array: ");
+    // printA(aux);
 
     int j = low;
     //System.out.println("j: " + j);
