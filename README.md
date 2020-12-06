@@ -1,3 +1,3 @@
-# algorithms
+# algorithms-and-data-structures
 
-Some basic algorithms and data structures I implemented for fun in Java.
+My implementation of simple algorithms and data structures written in a few common programming languages.
