@@ -1,6 +1,5 @@
 public class Queue<T>
 {
-
     private class Node
     {
         T value;
@@ -34,7 +33,7 @@ public class Queue<T>
     public T dequeue()
     {
         if (front == null)
-            return;
+            return null;
         T result = front.value;
         front = front.next;
         size--;
@@ -48,7 +47,7 @@ public class Queue<T>
         return front.value;
     }
 
-    public int getSize()
+    public int size()
     {
         return size;
     }
