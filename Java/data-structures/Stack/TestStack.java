@@ -4,7 +4,7 @@ class TestStack {
         Stack<Integer> stack = new Stack<Integer>();
 
         stack.print();
-        System.out.println("isEmpty: " + stack.isEmpty());
+        System.out.println("isEmpty: " + stack.isEmpty() + "\n");
 
         for (int i = 0; i < 5; i++)
         {
@@ -14,17 +14,16 @@ class TestStack {
             System.out.println("Peek: " + stack.peek() + "  Size: " + stack.size() + "\n");
         }
 
-        System.out.println("isEmpty: " + stack.isEmpty());
+        System.out.println("isEmpty: " + stack.isEmpty() + "\n");
 
         for (int i = 0; i < 5; i++)
         {
-            System.out.println("Popping\n");
-            stack.pop();
+            System.out.println("Popping " + stack.pop() + "\n");
             stack.print();
             System.out.println("Peek: " + stack.peek() + "  Size: " + stack.size() + "\n");
         }
 
-        System.out.println("isEmpty: " + stack.isEmpty());
+        System.out.println("isEmpty: " + stack.isEmpty() + "\n");
 
     }
 }
