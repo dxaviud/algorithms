@@ -39,7 +39,7 @@ public class Stack<T>
         return top.value;
     }
 
-    public int getSize()
+    public int size()
     {
         return size;
     }
