@@ -12,12 +12,14 @@ public class Stack<T>
     }
     
     private Node top = null;
+    private int size = 0;
     
     public void push(T value)
     {
         Node newNode = new Node(value);
         newNode.next = top;
         top = newNode;
+        size++;
     }
     
     public T pop()
@@ -26,6 +28,7 @@ public class Stack<T>
             return null;
         T result = top.value;
         top = top.next;
+        size--;
         return result;
     }
 
@@ -34,6 +37,11 @@ public class Stack<T>
         if (top == null)
             return null;
         return top.value;
+    }
+
+    public int getSize()
+    {
+        return size;
     }
     
     public boolean isEmpty()
@@ -48,7 +56,7 @@ public class Stack<T>
             System.out.println("Empty stack\n");
             return;
         }
-        
+
         Node currentNode = top;
         while (currentNode != null)
         {
