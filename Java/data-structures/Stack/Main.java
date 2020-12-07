@@ -1,21 +1,23 @@
 class Main {
   public static void main(String[] args) {
     
-    Stack<Integer> s = new Stack<Integer>();
+    Stack<Integer> stack = new Stack<Integer>();
 
     for (int i = 0; i < 5; i++)
     {
-      s.push(i);
-      System.out.println(s);
+      stack.push(i);
     }
+
+    stack.print();
 
     for (int i = 0; i < 5; i++)
     {
-      s.pop();
-      System.out.println(s);
+      System.out.println("Popping\n");
+      stack.pop();
+      stack.print();
     }
 
-    System.out.println("s is empty: "+s.isEmpty());
+    System.out.println("isEmpty: " + stack.isEmpty());
 
   }
 }
