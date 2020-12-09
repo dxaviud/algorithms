@@ -70,6 +70,27 @@ public class LinkedList<T>
         return true;
     }
 
+    public void reverse()
+    {
+        if (head == null || size == 1)
+            return;
+        Node previousNode = null;
+        Node currentNode = head;
+        Node nextNode = head.next;
+        while (true)
+        {
+            currentNode.next = previousNode;
+            if (nextNode == null)
+            {
+                head = currentNode;
+                return;
+            }
+            previousNode = currentNode;
+            currentNode = nextNode;
+            nextNode = nextNode.next;
+        }
+    }
+    
     public int size()
     {
         return size;

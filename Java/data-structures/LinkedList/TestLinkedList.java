@@ -37,5 +37,17 @@ public class TestLinkedList {
             System.out.println("size: " + linkedList.size() + "\n");
         }
 
+        System.out.println("Adding 0 to 9");
+        for (int i = 0; i < 10; i++)
+        {
+            linkedList.add(i);
+        }
+        linkedList.print();
+        System.out.println();
+
+        System.out.println("Reversing linked list");
+        linkedList.reverse();
+        linkedList.print();
+
     }
 }
