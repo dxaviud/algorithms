@@ -14,12 +14,31 @@ public class LinkedList<T>
     private Node head = null;
     private int size = 0;
 
+    private boolean validateIndex(int index)
+    {
+        return 0 <= index && index < size;
+    }
+
     public void add(T value)
     {
         Node newNode = new Node(value);
         newNode.next = head;
         head = newNode;
         size++;
+    }
+
+    public T set(int index, T value)
+    {
+        if (!validateIndex(index))
+            return null;
+        Node currentNode = head;
+        for (int i = 0; i < index; i++)
+        {
+            currentNode = currentNode.next;
+        }
+        T t = currentNode.value;
+        currentNode.value = value;
+        return t;
     }
 
     public boolean remove(T value)
@@ -49,7 +68,7 @@ public class LinkedList<T>
 
     public boolean removeAt(int index)
     {
-        if (index < 0 || index >= size)
+        if (!validateIndex(index))
             return false;
         if (head != null && index == 0)
         {
@@ -68,6 +87,34 @@ public class LinkedList<T>
         currentNode = null;
         size--;
         return true;
+    }
+
+    public boolean insert(T value, int index)
+    {
+        if (!validateIndex(index))
+            return false;
+        Node newNode = new Node(value);
+        if (index == 0)
+        {
+            newNode.next = head;
+            head = newNode;
+            size++;
+            return true;
+        }
+        else
+        {
+            Node previousNode = null;
+            Node currentNode = head;
+            for (int i = 0; i < index; i++)
+            {
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            previousNode.next = newNode;
+            newNode.next = currentNode;
+            size++;
+            return true;
+        }
     }
 
     public void reverse()
@@ -91,9 +138,26 @@ public class LinkedList<T>
         }
     }
     
+    public T get(int index)
+    {
+        if (!validateIndex(index))
+            return null;
+        Node currentNode = head;
+        for (int i = 0; i < index; i++)
+        {
+            currentNode = currentNode.next;
+        }
+        return currentNode.value;
+    }
+
     public int size()
     {
         return size;
+    }
+
+    public boolean isEmpty()
+    {
+        return head == null;
     }
 
     public void print()
