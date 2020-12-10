@@ -8,6 +8,7 @@ public class TestStack
         stack.print();
         System.out.println("isEmpty: " + stack.isEmpty() + "\n");
 
+        //testing push
         for (int i = 0; i < 5; i++)
         {
             System.out.println("Pushing " + i + "\n");
@@ -18,6 +19,7 @@ public class TestStack
 
         System.out.println("isEmpty: " + stack.isEmpty() + "\n");
 
+        //testing pop
         for (int i = 0; i < 5; i++)
         {
             System.out.println("Popping " + stack.pop() + "\n");
