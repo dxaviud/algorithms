@@ -3,12 +3,10 @@ public class ArrayList<T> {
     private Object[] array;
     private int capacity;
     private int size;
-    private int head;
 
     public ArrayList()
     {
         size = 0;
-        head = 0;
         capacity = 2;
         array = new Object[capacity];
     }
@@ -17,8 +15,7 @@ public class ArrayList<T> {
     {
         if (size == capacity)
             grow();
-        array[head] = data;
-        head++;
+        array[size] = data;
         size++;
     }
 
@@ -40,7 +37,6 @@ public class ArrayList<T> {
         {
             array[i] = array[i+1];
         }
-        head--;
         size--;
         if (size < capacity/2)
             shrink();
