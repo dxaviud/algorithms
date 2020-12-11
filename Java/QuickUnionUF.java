@@ -16,8 +16,7 @@ public class QuickUnionUF
     
     private int root(int i)
     {
-        int j = i;
-        
+
         while (i != id[i])
         {
             id[i] = id[id[i]];

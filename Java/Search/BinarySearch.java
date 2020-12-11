@@ -1,3 +1,5 @@
+package Search;
+
 public class BinarySearch
 {
     //Just for int arrays, I'm too noob to make it generic right now
