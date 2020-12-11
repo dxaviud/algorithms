@@ -3,7 +3,7 @@ public class SelectionSort{
     public static void main(String []args){
         int[] a = {9,8,7,6,5,4,3,2,1,0,2,3,4,6,7,3,3,6,3,63,363};
         printArray(a);
-        selectionSort(a);
+        sort(a);
         printArray(a);
     }
     
@@ -30,7 +30,7 @@ public class SelectionSort{
         }
         return minimum;
     }
-    public static void selectionSort(int[] a)
+    public static void sort(int[] a)
     {
         for (int i = 0; i < a.length; i++)
         {

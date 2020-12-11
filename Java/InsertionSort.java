@@ -1,9 +1,9 @@
-public class InsertionSort{
-
+public class InsertionSort
+{
     public static void main(String []args){
         int[] a = {9,8,7,6,5,4,3,2,1,0,2,3,4,6,7,3,3,6,3,63,363};
         printArray(a);
-        insertionSort(a);
+        sort(a);
         printArray(a);
     }
     
@@ -21,7 +21,7 @@ public class InsertionSort{
         a[second] = temporary;
     }
     
-    public static void insertionSort(int[] a)
+    public static void sort(int[] a)
     {
         for (int i = 1; i < a.length; i++)
         {

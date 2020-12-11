@@ -1,5 +1,5 @@
-public class MergeSort {
-
+public class MergeSort 
+{
   enum MergeType
   {
     recursive, bottomUp
