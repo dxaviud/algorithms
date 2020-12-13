@@ -1,5 +1,3 @@
-package ArrayList;
-
 public class ArrayList<T> {
     
     private Object[] array;

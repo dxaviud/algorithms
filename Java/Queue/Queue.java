@@ -1,5 +1,3 @@
-package Queue;
-
 public class Queue<T>
 {
     private class Node
