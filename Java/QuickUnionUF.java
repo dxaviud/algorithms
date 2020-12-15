@@ -73,7 +73,6 @@ public class QuickUnionUF
         quickUnion.union(6,7);
         quickUnion.union(8,9);
         
-        
         quickUnion.union(0,2); //root of 0 is 1, root of 2 is 3. Thus, root of 1 should become 3 by performing this union
         
         // quickUnion.union(3,8);
