@@ -1,3 +1,3 @@
 # algorithms-and-data-structures
 
-My implementations of simple algorithms and data structures.
+My implementations of some common algorithms and data structures.
