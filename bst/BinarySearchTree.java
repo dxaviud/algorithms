@@ -1,3 +1,5 @@
+package bst;
+
 // BST of ints with NO DUPLICATES
 public class BinarySearchTree {
 

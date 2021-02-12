@@ -1,5 +1,8 @@
+package bst;
+
 public class TestBinarySearchTree {
     public static void main(String[] args) {
+
         BinarySearchTree bst = new BinarySearchTree();
         // bst.peek(); //throws null pointer exception
         bst.add(5);
