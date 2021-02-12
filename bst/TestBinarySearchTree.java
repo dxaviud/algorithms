@@ -1,6 +1,7 @@
 package bst;
 
 public class TestBinarySearchTree {
+
     public static void main(String[] args) {
 
         BinarySearchTree bst = new BinarySearchTree();
@@ -17,5 +18,7 @@ public class TestBinarySearchTree {
             System.out.println("contains " + i + ": " + bst.contains(i));
         }
         System.out.println("peek: " + bst.peek());
+        
     }
+
 }
