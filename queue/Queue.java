@@ -1,25 +1,23 @@
-public class Queue<T>
-{
-    private class Node
-    {
+public class Queue<T> {
+    
+    private class Node {
+
         T value;
         Node next = null;
 
-        public Node(T value)
-        {
+        public Node(T value) {
             this.value = value;
         }
+
     }
 
     private Node front = null;
     private Node back = null;
     private int size = 0;
 
-    public void enqueue(T value)
-    {
+    public void enqueue(T value) {
         Node newNode = new Node(value);
-        if (front == null)
-        {
+        if (front == null) {
             front = newNode;
             back = newNode;
             size++;
@@ -30,44 +28,39 @@ public class Queue<T>
         size++;
     }
 
-    public T dequeue()
-    {
-        if (front == null)
+    public T dequeue() {
+        if (front == null) {
             return null;
+        }
         T result = front.value;
         front = front.next;
         size--;
         return result;
     }
 
-    public T peek()
-    {
-        if (front == null)
+    public T peek() {
+        if (front == null) {
             return null;
+        }
         return front.value;
     }
 
-    public int size()
-    {
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return front == null;
     }
 
-    public void print()
-    {
-        if (front == null)
-        {
+    public void print() {
+        if (front == null) {
             System.out.println("Empty queue\n");
             return;
         }
 
         Node currentNode = front;
-        while (currentNode != null)
-        {
+        while (currentNode != null) {
             System.out.print(currentNode.value + "->");
             currentNode = currentNode.next;
         }
