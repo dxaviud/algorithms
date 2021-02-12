@@ -10,8 +10,9 @@ public class InsertionSort {
     }
     
     public static void printArray(int[] a) {
-        for (int elem : a)
+        for (int elem : a) {
             System.out.print(elem + " ");
+        }
         System.out.println();
     }
     
@@ -31,5 +32,5 @@ public class InsertionSort {
             }
         }
     }
-    
+
 }
