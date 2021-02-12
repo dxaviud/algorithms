@@ -1,12 +1,10 @@
-public class LinkedList<T>
-{
-    private class Node
-    {
+public class LinkedList<T> {
+
+    private class Node {
         T value;
         Node next = null;
 
-        public Node(T value)
-        {
+        public Node(T value) {
             this.value = value;
         }
     }
@@ -14,26 +12,22 @@ public class LinkedList<T>
     private Node head = null;
     private int size = 0;
 
-    private boolean validateIndex(int index)
-    {
+    private boolean validateIndex(int index) {
         return 0 <= index && index < size;
     }
 
-    public void add(T value)
-    {
+    public void add(T value) {
         Node newNode = new Node(value);
         newNode.next = head;
         head = newNode;
         size++;
     }
 
-    public T set(int index, T value)
-    {
+    public T set(int index, T value) {
         if (!validateIndex(index))
             return null;
         Node currentNode = head;
-        for (int i = 0; i < index; i++)
-        {
+        for (int i = 0; i < index; i++) {
             currentNode = currentNode.next;
         }
         T t = currentNode.value;
@@ -41,20 +35,16 @@ public class LinkedList<T>
         return t;
     }
 
-    public boolean remove(T value)
-    {
-        if (head != null && head.value == value)
-        {
+    public boolean remove(T value) {
+        if (head != null && head.value == value) {
             head = head.next;
             size--;
             return true;
         }
         Node previousNode = null;
         Node currentNode = head;
-        while (currentNode != null)
-        {
-            if (currentNode.value == value)
-            {
+        while (currentNode != null) {
+            if (currentNode.value == value) {
                 previousNode.next = currentNode.next;
                 currentNode = null;
                 size--;
@@ -68,18 +58,17 @@ public class LinkedList<T>
 
     public boolean removeAt(int index)
     {
-        if (!validateIndex(index))
+        if (!validateIndex(index)) {
             return false;
-        if (head != null && index == 0)
-        {
+        }
+        if (head != null && index == 0) {
             head = head.next;
             size--;
             return true;
         }
         Node previousNode = null;
         Node currentNode = head;
-        for (int i = 0; i < index; i++)
-        {
+        for (int i = 0; i < index; i++) {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
@@ -89,24 +78,20 @@ public class LinkedList<T>
         return true;
     }
 
-    public boolean insert(T value, int index)
-    {
-        if (!validateIndex(index))
+    public boolean insert(T value, int index) {
+        if (!validateIndex(index)) {
             return false;
+        }
         Node newNode = new Node(value);
-        if (index == 0)
-        {
+        if (index == 0) {
             newNode.next = head;
             head = newNode;
             size++;
             return true;
-        }
-        else
-        {
+        } else {
             Node previousNode = null;
             Node currentNode = head;
-            for (int i = 0; i < index; i++)
-            {
+            for (int i = 0; i < index; i++) {
                 previousNode = currentNode;
                 currentNode = currentNode.next;
             }
@@ -117,18 +102,15 @@ public class LinkedList<T>
         }
     }
 
-    public void reverse()
-    {
+    public void reverse() {
         if (head == null || size == 1)
             return;
         Node previousNode = null;
         Node currentNode = head;
         Node nextNode = head.next;
-        while (true)
-        {
+        while (true) {
             currentNode.next = previousNode;
-            if (nextNode == null)
-            {
+            if (nextNode == null) {
                 head = currentNode;
                 return;
             }
@@ -138,42 +120,35 @@ public class LinkedList<T>
         }
     }
     
-    public T get(int index)
-    {
-        if (!validateIndex(index))
+    public T get(int index) {
+        if (!validateIndex(index)) {
             return null;
+        }
         Node currentNode = head;
-        for (int i = 0; i < index; i++)
-        {
+        for (int i = 0; i < index; i++) {
             currentNode = currentNode.next;
         }
         return currentNode.value;
     }
 
-    public int size()
-    {
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return head == null;
     }
 
-    public void print()
-    {
-        if (head == null)
-        {
+    public void print() {
+        if (head == null) {
             System.out.println("Empty list");
             return;
         }
         Node currentNode = head;
-        while (currentNode != null)
-        {
+        while (currentNode != null) {
             System.out.print(currentNode.value + "->");
             currentNode = currentNode.next;
         }
         System.out.println("null");
     }
-
 }
