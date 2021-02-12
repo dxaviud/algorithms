@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class LinkedList<T> {
 
     private class Node {
@@ -151,4 +153,5 @@ public class LinkedList<T> {
         }
         System.out.println("null");
     }
+
 }
