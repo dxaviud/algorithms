@@ -3,14 +3,12 @@ package stack;
 public class Stack<T> {
 
     private class Node {
-
         T value;
         Node next = null;
 
         public Node(T value) {
             this.value = value;
         }
-
     }
     
     private Node top = null;
