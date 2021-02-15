@@ -5,7 +5,7 @@ public class LinkedList<T> {
     private class Node {
         T value;
         Node next = null;
-
+        
         public Node(T value) {
             this.value = value;
         }
@@ -58,8 +58,7 @@ public class LinkedList<T> {
         return false;
     }
 
-    public boolean removeAt(int index)
-    {
+    public boolean removeAt(int index) {
         if (!validateIndex(index)) {
             return false;
         }
